@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import peaksoft.interfaces.Animal;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @NoArgsConstructor
 @Getter @Setter
 @ToString
@@ -24,11 +27,13 @@ public class Cat implements Animal {
     private int age;
 
     @Override
+    @PostConstruct
     public void animalPlus() {
         System.out.println("CAT...PLUS METHOD");
     }
 
     @Override
+    @PreDestroy
     public void animalMinus() {
         System.out.println("CAT...MINUS METHOD");
     }

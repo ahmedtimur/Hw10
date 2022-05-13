@@ -28,4 +28,5 @@ public class Person {
     public Person(@Qualifier("rabbit") Animal animal) {
         this.animal = animal;
     }
+
 }
